@@ -52,7 +52,7 @@ The app can be accessed:
 
 ### Commands 
 
-```helm upgrade riverbank -f ./riverbank/values-prod.yaml ./riverbank/ --dry-run``` 
-```kubectl create service loadbalancer nginx --tcp=80:80 --node-port=30080 --dry-run=client -o yaml```
-```kubectl create deploy riverbank --image=riverbank:v0.1.0 --dry-run=client -o yaml```
-```kubectl create service clusterip riverbank --tcp=5000:5000 --dry-run=client -oyaml```
+- ```helm upgrade riverbank -f ./riverbank/values-prod.yaml ./riverbank/ --dry-run``` 
+- ```kubectl create service loadbalancer nginx --tcp=80:80 --node-port=30080 --dry-run=client -o yaml```
+- ```kubectl create deploy riverbank --image=riverbank:v0.1.0 --dry-run=client -o yaml```
+- ```kubectl create service clusterip riverbank --tcp=5000:5000 --dry-run=client -oyaml```
