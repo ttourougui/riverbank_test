@@ -1,5 +1,9 @@
 
 # riverbank_test
+The app can be accessed:
+- [develop](http://34.88.13.120/develop/)
+- [qa](http://34.88.13.120/qa/)
+- [prod](http://34.88.13.120/prod/)
 
 ## The app
 - Hello world Flask App runs on a docker container. 
