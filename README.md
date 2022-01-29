@@ -1,26 +1,29 @@
+
 # riverbank_test
 
-### The app
-Flask App runs on a docker container. 
-The app uses an environment varibale which to be set using a configmap.
+## The app
+- Hello world Flask App runs on a docker container. 
+- The app uses an environment varibale which to be set using a configmap.
+- To pull the docker image run: ```docker pull blkwtch/riverbank:v0.3.0```
 
-### The Reverse Proxy (nginx)
-Nginx proxy listening on LoadBalancer service forward requests to based on location /develop /qa /prod
-Nginx configuration is set using a configmap
+## The Reverse Proxy (Nginx)
+- Nginx proxy listening on LoadBalancer service forward requests to based on location [/develop](http://34.88.13.120/develop/) [/qa](http://34.88.13.120/qa/) [/prod](http://34.88.13.120/prod/)
+- Nginx configuration is set using a configmap
 
-### Kubernetes Cluster
-2 nodes running on GKE cluster 
-3 environments/namespaces (develop, qa, prod)
-Helm template to use the same kubernetes manifests with different values for each {{ .Release.Namespace }}  and {{ .Values. }}
-Envrionment variable to distinguish between the environments
+## Kubernetes Cluster
+- 2 nodes running on GKE cluster / minikube locally
+- 3 environments/namespaces (develop, qa, prod)
+- Helm template to use the same kubernetes manifests with different values for each ```{{ .Release.Namespace }}```  and ```{{ .Values. }}```
+- Envrionment variable to distinguish between the environments
 
 
-Todo
-Add github-action.yaml pipeline and use the release tag as a value for the image tag 
-github_tag ==> github_release ==> image_tag ==> helm_release 
-Update nginx configuration using Helm
+## Todo
+ - Add github-action.yaml pipeline and use the release tag as a value for the image tag 
+ - github_tag ==> github_release ==> image_tag ==> helm_release 
+ - Update nginx configuration using Helm
 
-### Tree of the project
+
+## Tree of the project
 ```
 ├── Dockerfile # Dockerfile of the python app
 ├── app # the folder of the flask app
